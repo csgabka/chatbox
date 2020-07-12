@@ -1,0 +1,18 @@
+.Login {
+  box-sizing: border-box;
+  height: 30px;
+  margin: 5px;
+  width: 180px;
+  background-color: #34B3E6;
+  border: none;
+  border-radius: 5px;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: #CECFCE 2px 2px 2px;
+}
+
+.Login:hover {
+  cursor: pointer;
+  background-color: #355BE6;
+}

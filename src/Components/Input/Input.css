@@ -1,0 +1,8 @@
+.Name {
+  box-sizing: border-box;
+  height: 3em;
+  border: 1px #CECFCE solid;
+  width: 180px;
+  box-shadow: #CECFCE 2px 2px 2px;
+  text-align: center;
+}
