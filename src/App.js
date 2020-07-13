@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+import firebase from './firebase.js'
 
 import Auth from './Components/Auth/Auth';
 import Home from './Components/Home/Home';
@@ -8,11 +9,9 @@ import './App.css';
 
 class App extends Component {
   render() {
-    
     return (
       <BrowserRouter>
         <div className="App">
-
         <Switch>
           <Route path="/" exact component={Auth} />
           <Route path="/chat" exact component={Home} />
