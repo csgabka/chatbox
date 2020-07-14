@@ -1,4 +1,7 @@
-
+//TO DO!
+//PULL MESSAGES FROM FIREBASE
+//ONLINE/OFFLINE USER DISPLAY
+//DESIGN
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

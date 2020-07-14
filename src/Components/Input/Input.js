@@ -5,7 +5,8 @@ const input = (props) => {
   return (
   <div>
     <input className="Name"
-     placeholder={props.placeholder}></input>
+     placeholder={props.placeholder}
+     onChange={props.changeHandler}></input>
   </div>
 );
 }
