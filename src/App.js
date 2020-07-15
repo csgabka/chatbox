@@ -12,7 +12,7 @@ class App extends Component {
 
     return (
       <BrowserRouter history={history}
-      basename={process.env.PUBLIC_URL}>>
+      basename={process.env.PUBLIC_URL}>
         <div className="App">
         <Switch>
           <Route path="/" exact component={Auth} />
