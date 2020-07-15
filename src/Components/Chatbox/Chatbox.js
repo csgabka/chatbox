@@ -8,10 +8,27 @@ class Chatbox extends Component {
   constructor() {
     super();
     this.state = {
-      message: ''
+      message: '',
+      chats: []
     }
     this.changeHandler = this.changeHandler.bind(this);
   }
+
+  componentDidMount() {
+    const chatRef = firebase.database().ref('chat');
+    chatRef.on('value', snapshot => {
+      const getChats = snapshot.val();
+      let ascChats = [];
+      for(let chat in getChats){
+        ascChats.push({
+          message: getChats[chat].message,
+          username: getChats[chat].username,
+          timestamp: getChats[chat].timestamp
+        });
+      }
+      this.setState({chats: ascChats});
+  });
+}
 
   changeHandler = (e) => {
     e.preventDefault();
@@ -40,8 +57,7 @@ class Chatbox extends Component {
       <Button
       name="logout"
       handleSubmit={this.logoutUser} />
-      <Chat />
-
+      <Chat chats={this.state.chats}/>
         <Input changeHandler={(e) => this.changeHandler(e)}/>
         <Button handleSubmit={(e) => {this.handleSubmit(e)}}
         name="send"/>
