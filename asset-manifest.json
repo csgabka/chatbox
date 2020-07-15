@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/chatbox/static/css/main.39d9934c.chunk.css",
-    "main.js": "/chatbox/static/js/main.66ff1259.chunk.js",
-    "main.js.map": "/chatbox/static/js/main.66ff1259.chunk.js.map",
-    "runtime-main.js": "/chatbox/static/js/runtime-main.349cc507.js",
-    "runtime-main.js.map": "/chatbox/static/js/runtime-main.349cc507.js.map",
-    "static/js/2.6ded21ae.chunk.js": "/chatbox/static/js/2.6ded21ae.chunk.js",
-    "static/js/2.6ded21ae.chunk.js.map": "/chatbox/static/js/2.6ded21ae.chunk.js.map",
-    "index.html": "/chatbox/index.html",
-    "precache-manifest.538e4ba889ff8718b21838a273384ade.js": "/chatbox/precache-manifest.538e4ba889ff8718b21838a273384ade.js",
-    "service-worker.js": "/chatbox/service-worker.js",
-    "static/css/main.39d9934c.chunk.css.map": "/chatbox/static/css/main.39d9934c.chunk.css.map",
-    "static/js/2.6ded21ae.chunk.js.LICENSE.txt": "/chatbox/static/js/2.6ded21ae.chunk.js.LICENSE.txt"
+    "main.css": "https://csgabka.github.io/chatbox/static/css/main.39d9934c.chunk.css",
+    "main.js": "https://csgabka.github.io/chatbox/static/js/main.9e103441.chunk.js",
+    "main.js.map": "https://csgabka.github.io/chatbox/static/js/main.9e103441.chunk.js.map",
+    "runtime-main.js": "https://csgabka.github.io/chatbox/static/js/runtime-main.a547c6d9.js",
+    "runtime-main.js.map": "https://csgabka.github.io/chatbox/static/js/runtime-main.a547c6d9.js.map",
+    "static/js/2.73f49b7a.chunk.js": "https://csgabka.github.io/chatbox/static/js/2.73f49b7a.chunk.js",
+    "static/js/2.73f49b7a.chunk.js.map": "https://csgabka.github.io/chatbox/static/js/2.73f49b7a.chunk.js.map",
+    "index.html": "https://csgabka.github.io/chatbox/index.html",
+    "precache-manifest.cead4520af821c8a6c204b33db4c0d7b.js": "https://csgabka.github.io/chatbox/precache-manifest.cead4520af821c8a6c204b33db4c0d7b.js",
+    "service-worker.js": "https://csgabka.github.io/chatbox/service-worker.js",
+    "static/css/main.39d9934c.chunk.css.map": "https://csgabka.github.io/chatbox/static/css/main.39d9934c.chunk.css.map",
+    "static/js/2.73f49b7a.chunk.js.LICENSE.txt": "https://csgabka.github.io/chatbox/static/js/2.73f49b7a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.349cc507.js",
-    "static/js/2.6ded21ae.chunk.js",
+    "static/js/runtime-main.a547c6d9.js",
+    "static/js/2.73f49b7a.chunk.js",
     "static/css/main.39d9934c.chunk.css",
-    "static/js/main.66ff1259.chunk.js"
+    "static/js/main.9e103441.chunk.js"
   ]
 }
