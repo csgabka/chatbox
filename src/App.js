@@ -17,7 +17,7 @@ class App extends Component {
         <Switch>
           <Route path="/" exact component={Auth} />
           <Route path="/chat" exact component={Home} />
-          // <Route component={Error} />
+          
         </Switch>
         </div>
       </HashRouter>
