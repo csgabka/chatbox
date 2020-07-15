@@ -11,7 +11,8 @@ class App extends Component {
   render() {
 
     return (
-      <BrowserRouter>
+      <BrowserRouter history={history}
+      basename={process.env.PUBLIC_URL}>>
         <div className="App">
         <Switch>
           <Route path="/" exact component={Auth} />
