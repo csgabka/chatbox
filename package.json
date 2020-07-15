@@ -1,5 +1,6 @@
 {
   "name": "chatbox",
+  "homepage": "https://csgabka.github.io/chatbox/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
