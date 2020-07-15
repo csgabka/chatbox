@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Router, Route, Link, Switch } from 'react-router-dom';
+import { HashRouter, Route, Link, Switch } from 'react-router-dom';
 import Auth from './Components/Auth/Auth';
 import Home from './Components/Home/Home';
 import Error from './Components/Error/Error';
@@ -11,15 +11,16 @@ class App extends Component {
   render() {
 
     return (
-      <Router basename={process.env.PUBLIC_URL}>
+
+      <HashRouter basename={process.env.PUBLIC_URL}>
         <div className="App">
         <Switch>
           <Route path="/" exact component={Auth} />
           <Route path="/chat" exact component={Home} />
-          <Route component={Error} />
+          // <Route component={Error} />
         </Switch>
         </div>
-      </Router>
+      </HashRouter>
 
 
       );
