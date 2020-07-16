@@ -1,5 +1,5 @@
 //TO DO!
-//logout
+//error msg for '' login
 //ONLINE/OFFLINE USER DISPLAY
 //DESIGN
 

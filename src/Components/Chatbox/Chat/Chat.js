@@ -4,8 +4,6 @@ import firebase from '../../../firebase.js';
 class Chat extends Component {
   render() {
     let chats = this.props.chats;
-
-    console.log(chats);
     return (
       <div>
         <ul>

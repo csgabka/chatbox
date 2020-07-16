@@ -3,6 +3,7 @@ import Input from '../Input/Input';
 import Button from '../Button/Button';
 import Chat from './Chat/Chat';
 import firebase from '../../firebase.js';
+import "./Chatbox.css";
 
 class Chatbox extends Component {
   constructor() {
@@ -36,8 +37,10 @@ class Chatbox extends Component {
   }
 
   logoutUser = (e) => {
-    e.preventDefault();
-    //TO DO!
+    localStorage.clear();
+    const local = localStorage.getItem('usernameInLocalStorage');
+    console.log(window.location.replace('/'));
+    //TO GO OFFLINE! TO DO!
   }
 
   handleSubmit = (e) => {
@@ -54,8 +57,10 @@ class Chatbox extends Component {
   render() {
     return (
       <div>
+
       <Button
       name="logout"
+      className="LogOutButton"
       handleSubmit={this.logoutUser} />
       <Chat chats={this.state.chats}/>
         <Input changeHandler={(e) => this.changeHandler(e)}/>

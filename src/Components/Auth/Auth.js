@@ -23,13 +23,20 @@ class Auth extends Component {
   };
 
   handleSubmit = (e) => {
-    console.log(this.state.username);
     e.preventDefault();
     const username = this.state.username;
-      this.props.history.push({
-        pathname: '/chat',
-        state: { username: username }
-  });
+    if (username === '') {
+      console.log('error');
+    } else {
+      let userRef = firebase.database().ref('online');
+      userRef.push(username, () => {
+        localStorage.setItem('usernameInLocalStorage', username);
+        const localStoredName = localStorage.getItem('usernameInLocalStorage');
+           this.props.history.push({
+             pathname: '/chat' }
+      )
+      });
+    }
 }
 
   render() {
@@ -37,6 +44,8 @@ class Auth extends Component {
     let style = {
       fontSize: 30
     }
+
+
       return(
           <div className="Auth">
             <h1 style={style}>Chatbox</h1>

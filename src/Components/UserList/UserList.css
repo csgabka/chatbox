@@ -1,0 +1,13 @@
+.UserList {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100vh;
+  background-color: #F9F9F9;
+  color: #B2B8B8;
+}
+
+.UserListTitle {
+  color: #B2B8B8;
+}

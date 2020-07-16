@@ -1,13 +1,18 @@
 import React, { Component } from  'react';
 import Chatbox from '../Chatbox/Chatbox';
+import UserList from '../UserList/UserList';
+
 
 class Home extends Component {
+
   render() {
+    let username = localStorage.getItem('usernameInLocalStorage');
     return(
       <div>
-        <h1>Home</h1>
-        <h3>Welcome {this.props.location.state.username}!!!</h3>
-        <Chatbox username={this.props.location.state.username}/>
+        <UserList />
+        <h1>Chatbox</h1>
+        <h3>Welcome {username}!!!</h3>
+        <Chatbox username={username}/>
       </div>
     );
   }
