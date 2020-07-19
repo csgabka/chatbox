@@ -6,35 +6,46 @@ class  UserList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeUsers: []
+      onlineUsers: [],
+      offlineUsers: []
     }
   }
 
   componentDidMount() {
-    let userRef = firebase.database().ref('online');
-    userRef.on('value', snapshot => {
-      const getUsers = snapshot.val();
-      let activeUsers = [];
-      for(let user in getUsers){
-        activeUsers.push({
-          activeUsers: activeUsers
+    let userRefOn = firebase.database().ref('online');
+    userRefOn.on('value', snapshot => {
+      const getOnlineUsers = snapshot.val();
+      let onlineUsers = [];
+      for(let user in getOnlineUsers){
+        onlineUsers.push({
+          onlineUsers: onlineUsers
         });
       }
-      this.setState({activeUsers: activeUsers});
-      console.log(this.state.activeUsers);
+      this.setState({onlineUsers: onlineUsers});
   });
+  let userRefOff = firebase.database().ref('offline');
+  userRefOff.on('value', snapshot => {
+    const getOfflineUsers = snapshot.val();
+    let offlineUsers = [];
+    for(let user in getOfflineUsers){
+      offlineUsers.push({
+        offlineUsers: offlineUsers
+      });
+    }
+    this.setState({offlineUsers: offlineUsers});
+});
 }
 
   render() {
-    const { activeUsers } = this.state;
-
+    const { onlineUsers, offlineUsers } = this.state;
+    console.log(offlineUsers);
     return (
       <div className="UserList">
         <h1 className="UserListTitle">Users</h1>
         <h2 className="UserListTitle">Online</h2>
         <ul>
-        {activeUsers.map(user => {
-          return <li>!TO DO!</li>
+        {offlineUsers.map(user => {
+          return <li></li>
         })}
 
         </ul>

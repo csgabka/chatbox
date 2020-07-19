@@ -37,11 +37,15 @@ class Chatbox extends Component {
   }
 
   logoutUser = (e) => {
-    localStorage.clear();
-    const local = localStorage.getItem('usernameInLocalStorage');
-    console.log(window.location.replace('/'));
-    //TO GO OFFLINE! TO DO!
+    let username = localStorage.getItem('localStoredName');
+    let userRef = firebase.database().ref('users')
+    .orderByChild("username").equalTo(username);
+    userRef.ref.remove();
+    //fix delete from database
   }
+    //localStorage.clear();
+    //window.location.replace('/');
+
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -61,7 +65,7 @@ class Chatbox extends Component {
       <Button
       name="logout"
       className="LogOutButton"
-      handleSubmit={this.logoutUser} />
+      handleSubmit={(e) => this.logoutUser(e)} />
       <Chat chats={this.state.chats}/>
         <Input changeHandler={(e) => this.changeHandler(e)}/>
         <Button handleSubmit={(e) => {this.handleSubmit(e)}}

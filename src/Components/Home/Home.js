@@ -6,13 +6,13 @@ import UserList from '../UserList/UserList';
 class Home extends Component {
 
   render() {
-    let username = localStorage.getItem('usernameInLocalStorage');
+    let username = localStorage.getItem('localStoredName');
     return(
       <div>
-        <UserList />
+
         <h1>Chatbox</h1>
         <h3>Welcome {username}!!!</h3>
-        <Chatbox username={username}/>
+        <Chatbox />
       </div>
     );
   }
