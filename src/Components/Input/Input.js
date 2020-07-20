@@ -7,7 +7,7 @@ const input = (props) => {
     <input
     onFocus={props.onFocus}
     value={props.value}
-    className="Name"
+    className={props.className}
      placeholder={props.placeholder}
      onChange={props.changeHandler}></input>
   </div>

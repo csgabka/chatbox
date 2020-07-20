@@ -11,6 +11,7 @@ class Auth extends Component {
     super();
     this.state = {
       username: '',
+      userKey: '',
       isValid: false,
       alreadyLoggedIn: false
     }
@@ -18,6 +19,14 @@ class Auth extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.authorization = this.authorization.bind(this);
     this.onFocusHandler = this.onFocusHandler.bind(this);
+  }
+
+  componentDidMount() {
+    this._isMounted = true;
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
 
@@ -44,39 +53,41 @@ class Auth extends Component {
     const { username, isValid }  = this.state;
     let userRef = firebase.database().ref('users');
     if (isValid) {
-        userRef.push().set({
-          username: username
-        });
-        localStorage.setItem('localStoredName', username);
-           this.props.history.push({
-                  pathname: '/chat' }
-           )
-        }
+      localStorage.setItem('localStoredName', username);
+      userRef.push({username: username}).then(res => {
+        localStorage.setItem('localStoredUserKey', res.getKey());
+        this.props.history.push({
+          pathname: '/chat'
+        })
+      });
     }
+  }
+
 
     onFocusHandler = (e) => {
       this.setState({username: '', alreadyLoggedIn: false});
     }
 
   render() {
-
     let style = {
       fontSize: 30
     }
 
     let alreadyLoggedIn = <p className="error">{this.state.username} has already logged in!</p>;
+    let noNameEntered = <p className="error">Please enter your name!</p>;
       return(
           <div className="Auth">
             <h1 style={style}>Chatbox</h1>
             <Backdrop>
               <h1>Login</h1>
               <Input
+              className="Input"
               onFocus={(e) => this.onFocusHandler(e)}
               placeholder="Type your name..."
               changeHandler={(e) => this.changeHandler(e)}
               value={this.state.username}/>
                {(this.state.alreadyLoggedIn) ? alreadyLoggedIn : null}
-              <Button name="login"
+              <Button name="login" className="Button"
               handleSubmit={(e) => this.authorization(e)} />
             </Backdrop>
           </div>

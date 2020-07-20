@@ -5,7 +5,7 @@ import './Button.css';
 const button = (props) => {
   return (
   <div>
-    <button className="Login"
+    <button className={props.className}
     onClick={props.handleSubmit}>{props.name}</button>
   </div>
 );

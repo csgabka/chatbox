@@ -9,7 +9,7 @@ class Home extends Component {
     let username = localStorage.getItem('localStoredName');
     return(
       <div>
-
+        <UserList />
         <h1>Chatbox</h1>
         <h3>Welcome {username}!!!</h3>
         <Chatbox />

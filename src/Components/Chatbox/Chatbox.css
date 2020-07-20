@@ -1,3 +1,24 @@
-.LogOutButton {
+.Chatbox {
+  position: fixed;
+  left: 0;
+  box-sizing: border-box;
+  padding: 50px;
+  width: 100vw;
+  height: 100vh;
+}
 
+.Send {
+  height: 40px;
+  margin: 0px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 25%;
+}
+
+.MsgInput {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 75%;
 }

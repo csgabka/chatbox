@@ -38,20 +38,19 @@ class Chatbox extends Component {
 
   logoutUser = (e) => {
     let username = localStorage.getItem('localStoredName');
-    let userRef = firebase.database().ref('users')
-    .orderByChild("username").equalTo(username);
-    userRef.ref.remove();
-    //fix delete from database
+    let userKey = localStorage.getItem('localStoredUserKey');
+    let userRef = firebase.database().ref('users');
+    userRef.child(userKey).remove();
+    localStorage.clear();
+    window.location.replace('/');
   }
-    //localStorage.clear();
-    //window.location.replace('/');
-
 
   handleSubmit = (e) => {
+    let username = localStorage.getItem('localStoredName');
     e.preventDefault();
     const chat = {
       message: this.state.message,
-      username: this.props.username,
+      username: username,
       timestamp: new Date().getTime()
     }
     let userRef = firebase.database().ref('chat');
@@ -60,15 +59,14 @@ class Chatbox extends Component {
 
   render() {
     return (
-      <div>
-
+      <div className="Chatbox">
       <Button
       name="logout"
-      className="LogOutButton"
+      className="Button"
       handleSubmit={(e) => this.logoutUser(e)} />
       <Chat chats={this.state.chats}/>
-        <Input changeHandler={(e) => this.changeHandler(e)}/>
-        <Button handleSubmit={(e) => {this.handleSubmit(e)}}
+        <Input className="Input MsgInput" changeHandler={(e) => this.changeHandler(e)}/>
+        <Button className="Button Send" handleSubmit={(e) => {this.handleSubmit(e)}}
         name="send"/>
       </div>
     );

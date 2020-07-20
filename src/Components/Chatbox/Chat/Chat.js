@@ -10,7 +10,7 @@ class Chat extends Component {
         {chats.map((chat, index) => {
           const postDate = new Date(chat.timestamp);
           return (
-            <li key={index}>{chat.username} {postDate.getDate() + '/' + (postDate.getMonth()+1)}: {chat.message}</li>
+            <li key={index}>{chat.username} {postDate.getHours() + ':' + (postDate.getMinutes())}: {chat.message}</li>
           );
         })}
         </ul>
