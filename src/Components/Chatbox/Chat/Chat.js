@@ -5,6 +5,8 @@ import './Chat.css';
 class Chat extends Component {
   render() {
     let chats = this.props.chats;
+    let username = localStorage.getItem('localStoredName');
+
     console.log(chats);
     return (
       <div className="ChatContainer">
@@ -13,7 +15,12 @@ class Chat extends Component {
         {chats.map((chat, index) => {
           const postDate = new Date(chat.timestamp);
           return (
-            <li key={index}><span>{chat.username}</span> {postDate.getHours() + ':' + (postDate.getMinutes())}: {chat.message}</li>
+            <li key={index} className="">
+
+            //conditional rendering me instead of name
+            <span>{postDate.getHours() + ':' + (postDate.getMinutes())}:</span>
+            <span>{chat.message}</span>
+            </li>
           );
         })}
         </ul>

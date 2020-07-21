@@ -7,4 +7,10 @@
   height: calc(100% - 200px);
   display: flex;
   align-items: flex-end;
+  justify-content: flex-start;
+}
+
+ul {
+  list-style: none;
+  padding: 5px;
 }

@@ -46,6 +46,7 @@ class Chatbox extends Component {
     }
     let userRef = firebase.database().ref('chat');
     userRef.push(chat);
+    this.setState({message: ''});
   }
 
   render() {

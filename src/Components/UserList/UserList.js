@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import firebase from '../../firebase.js';
 import './UserList.css';
+import ColoredLine from '../ColoredLine/ColoredLine';
 
 class  UserList extends Component {
   constructor(props) {
@@ -33,7 +34,10 @@ class  UserList extends Component {
         <ul>
         {this.state.users.map((user, index) => {
           return (
+            <div>
             <li className="OnlineUsers" key={index}>{user.username}</li>
+            <ColoredLine color="#B2B8B8" />
+            </div>
           );
         })}
         </ul>
