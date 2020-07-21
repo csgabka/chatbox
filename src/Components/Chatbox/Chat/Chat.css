@@ -1,0 +1,10 @@
+.ChatContainer {
+  box-sizing: border-box;
+  position: absolute;
+  left: 220px;
+  top: 160px;
+  width: calc(100% - 220px);
+  height: calc(100% - 200px);
+  display: flex;
+  align-items: flex-end;
+}

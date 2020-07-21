@@ -2,7 +2,6 @@
   position: fixed;
   left: 0;
   box-sizing: border-box;
-  padding: 50px;
   width: 100vw;
   height: 100vh;
 }
@@ -13,12 +12,14 @@
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 25%;
+  width: calc(30% - 110px);
 }
 
 .MsgInput {
+  text-align: left;
   position: fixed;
   bottom: 0;
-  left: 0;
-  width: 75%;
+  left: 220px;
+  width: calc(70% - 110px);
+  height: 40px;
 }

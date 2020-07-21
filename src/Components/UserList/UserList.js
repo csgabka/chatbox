@@ -18,7 +18,7 @@ class  UserList extends Component {
       let users = [];
       for(let user in getUsers){
         users.push({
-          users: users
+          username: getUsers[user].username
         });
       }
       this.setState({users: users});
@@ -26,13 +26,14 @@ class  UserList extends Component {
 }
 
   render() {
+    console.log(this.state.users);
       return (
       <div className="UserList">
-        <h1 className="UserListTitle">Users</h1>
+        <h1 className="UserListTitle">Online</h1>
         <ul>
         {this.state.users.map((user, index) => {
           return (
-            <li key={index}>{user.username}</li>
+            <li className="OnlineUsers" key={index}>{user.username}</li>
           );
         })}
         </ul>

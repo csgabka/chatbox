@@ -36,15 +36,6 @@ class Chatbox extends Component {
     this.setState({message: e.target.value});
   }
 
-  logoutUser = (e) => {
-    let username = localStorage.getItem('localStoredName');
-    let userKey = localStorage.getItem('localStoredUserKey');
-    let userRef = firebase.database().ref('users');
-    userRef.child(userKey).remove();
-    localStorage.clear();
-    window.location.replace('/');
-  }
-
   handleSubmit = (e) => {
     let username = localStorage.getItem('localStoredName');
     e.preventDefault();
@@ -60,10 +51,7 @@ class Chatbox extends Component {
   render() {
     return (
       <div className="Chatbox">
-      <Button
-      name="logout"
-      className="Button"
-      handleSubmit={(e) => this.logoutUser(e)} />
+
       <Chat chats={this.state.chats}/>
         <Input className="Input MsgInput" changeHandler={(e) => this.changeHandler(e)}/>
         <Button className="Button Send" handleSubmit={(e) => {this.handleSubmit(e)}}

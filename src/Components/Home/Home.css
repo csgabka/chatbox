@@ -1,0 +1,14 @@
+.topNav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+}
+
+h1, h3 {
+position: relative;
+}
