@@ -26,7 +26,6 @@ class Home extends Component {
           name="logout"
           className="Button"
           handleSubmit={(e) => this.logoutUser(e)} />
-          <h1>Chatbox</h1>
           <h3>Welcome {username}!</h3>
         </nav>
         <Chatbox />

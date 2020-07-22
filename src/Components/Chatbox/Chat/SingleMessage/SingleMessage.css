@@ -1,0 +1,54 @@
+.SingleMessage {
+  box-sizing: border-box;
+  padding: 5px;
+  margin: 15px;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.Time {
+  padding: 5px;
+}
+
+.UserName {
+  padding: 5px;
+  color: #000;
+}
+
+.Message {
+  margin-left: 15px;
+  position: absolute;
+  border-radius: 10px;
+  color: #FFF;
+  padding: 5px;
+  background-color: #355BE6;
+  max-width: 80%;
+}
+
+.Message:before {
+  z-index: 999;
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: -11px;
+	right: auto;
+  top: 5px;
+	bottom: auto;
+	border: 8px solid;
+	border-color: #355BE6 #355BE6 transparent transparent;
+}
+
+.Message:after{
+  z-index: 999;
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: -7px;
+	right: auto;
+  top: 7px;
+	bottom: auto;
+	border: 3px solid;
+	border-color: #FFF #FFF transparent transparent;
+}

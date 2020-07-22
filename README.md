@@ -1,4 +1,5 @@
 //TO DO!
+//fix overflow in loaded messages
 //error msg for '' login
 //auto logout after certain time
 //DESIGN
