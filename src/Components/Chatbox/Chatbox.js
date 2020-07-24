@@ -36,6 +36,12 @@ class Chatbox extends Component {
     this.setState({message: e.target.value});
   }
 
+  handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      this.handleSubmit(e);
+    }
+  }
+
   handleSubmit = (e) => {
     let username = localStorage.getItem('localStoredName');
     e.preventDefault();
@@ -52,11 +58,16 @@ class Chatbox extends Component {
   render() {
     return (
       <div className="Chatbox">
-
       <Chat chats={this.state.chats}/>
-        <Input className="Input MsgInput" changeHandler={(e) => this.changeHandler(e)}/>
-        <Button className="Button Send" handleSubmit={(e) => {this.handleSubmit(e)}}
-        name="send"/>
+        <Input className="Input MsgInput"
+        changeHandler={(e) => this.changeHandler(e)}
+        onKeyPress={this.handleKeyPress}
+        value={this.state.message}/>
+        <Button
+        className="Button Send"
+        handleSubmit={(e) => {this.handleSubmit(e)}}
+        name="send"
+        onKeyPress={this.handleKeyPress}/>
       </div>
     );
   }

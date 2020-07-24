@@ -1,9 +1,8 @@
-.SingleMessage {
+li.SingleMessage {
   box-sizing: border-box;
   padding: 5px;
-  margin: 15px;
-  max-width: 100%;
   word-wrap: break-word;
+  display: flex;
 }
 
 .Time {
@@ -17,7 +16,6 @@
 
 .Message {
   margin-left: 15px;
-  position: absolute;
   border-radius: 10px;
   color: #FFF;
   padding: 5px;
@@ -25,13 +23,13 @@
   max-width: 80%;
 }
 
-.Message:before {
+/* .Message:before {
   z-index: 999;
 	content: ' ';
 	position: absolute;
 	width: 0;
 	height: 0;
-  left: -11px;
+  left: -10px;
 	right: auto;
   top: 5px;
 	bottom: auto;
@@ -45,10 +43,10 @@
 	position: absolute;
 	width: 0;
 	height: 0;
-  left: -7px;
+  left: -6px;
 	right: auto;
   top: 7px;
 	bottom: auto;
 	border: 3px solid;
 	border-color: #FFF #FFF transparent transparent;
-}
+} */

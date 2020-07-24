@@ -8,11 +8,12 @@ const chat = (props) => {
   let username = localStorage.getItem('localStoredName');
   return (
     <div className="ChatContainer">
-      <ul>
+      <ul className="Chats">
       {chats.map((chat, index) => {
         const postDate = new Date(chat.timestamp);
         return (
-          <SingleMessage postDate={postDate}
+          <SingleMessage
+          postDate={postDate}
           name={chat.username}
           message={chat.message}/>
         );

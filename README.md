@@ -1,5 +1,6 @@
 //TO DO!
-//fix overflow in loaded messages
+//add talk bubble
+//scroll to new message
 //error msg for '' login
 //auto logout after certain time
 //DESIGN

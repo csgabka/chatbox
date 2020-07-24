@@ -33,7 +33,13 @@ class Auth extends Component {
   changeHandler = (e) => {
     e.preventDefault();
     this.setState({username: e.target.value});
-  };
+      };
+
+  handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      this.authorization(e);
+    }
+  }
 
   authorization = (e) => {
     e.preventDefault();
@@ -85,6 +91,7 @@ class Auth extends Component {
               onFocus={(e) => this.onFocusHandler(e)}
               placeholder="Type your name..."
               changeHandler={(e) => this.changeHandler(e)}
+              onKeyPress={this.handleKeyPress}
               value={this.state.username}/>
                {(this.state.alreadyLoggedIn) ? alreadyLoggedIn : null}
               <Button name="login" className="Button"

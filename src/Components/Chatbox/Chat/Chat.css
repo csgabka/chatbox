@@ -8,11 +8,16 @@
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
-
   z-index: 999;
 }
 
-ul {
+.Chats {
   list-style: none;
   padding: 5px;
+  width: 100%;
+  text-align: left;
+  overflow: scroll;
+  overflow-x: hidden;
+  max-height: 100%;
+
 }

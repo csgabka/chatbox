@@ -6,7 +6,8 @@ const button = (props) => {
   return (
   <div>
     <button className={props.className}
-    onClick={props.handleSubmit}>{props.name}</button>
+    onClick={props.handleSubmit}
+    >{props.name}</button>
   </div>
 );
 }

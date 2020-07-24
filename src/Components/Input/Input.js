@@ -9,7 +9,8 @@ const input = (props) => {
     value={props.value}
     className={props.className}
      placeholder={props.placeholder}
-     onChange={props.changeHandler}></input>
+     onChange={props.changeHandler}
+     onKeyPress={props.onKeyPress}></input>
   </div>
 );
 }
