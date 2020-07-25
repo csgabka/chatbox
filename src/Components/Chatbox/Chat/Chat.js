@@ -3,12 +3,12 @@ import firebase from '../../../firebase.js';
 import './Chat.css';
 import SingleMessage from './SingleMessage/SingleMessage';
 
-const chat = (props) => {
+const chat = React.forwardRef((props, ref) => {
   let chats = props.chats;
   let username = localStorage.getItem('localStoredName');
   return (
-    <div className="ChatContainer">
-      <ul className="Chats">
+    <div className="ChatContainer" >
+      <ul className="Chats" ref={ref}>
       {chats.map((chat, index) => {
         const postDate = new Date(chat.timestamp);
         return (
@@ -21,6 +21,6 @@ const chat = (props) => {
       </ul>
     </div>
   );
-}
+})
 
 export default chat;

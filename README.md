@@ -1,7 +1,7 @@
 //TO DO!
-//add talk bubble
-//scroll to new message
-//error msg for '' login
+/responsive
+//fix scroll to new message scrollTo replace
+//error msg for '' login and '' msg
 //auto logout after certain time
 //DESIGN
 //dark mode

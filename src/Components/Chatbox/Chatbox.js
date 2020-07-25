@@ -13,9 +13,11 @@ class Chatbox extends Component {
       chats: []
     }
     this.changeHandler = this.changeHandler.bind(this);
+    this.myScrollRef = React.createRef()
   }
 
   componentDidMount() {
+    this.myScrollRef.current.scrollTo(0,1600);
     const chatRef = firebase.database().ref('chat');
     chatRef.on('value', snapshot => {
       const getChats = snapshot.val();
@@ -29,6 +31,10 @@ class Chatbox extends Component {
       }
       this.setState({chats: ascChats});
   });
+}
+
+componentDidUpdate() {
+this.myScrollRef.current.scrollTo(0,1600);
 }
 
   changeHandler = (e) => {
@@ -52,13 +58,15 @@ class Chatbox extends Component {
     }
     let userRef = firebase.database().ref('chat');
     userRef.push(chat);
-    this.setState({message: ''});
+    this.setState({message: ''})
   }
 
   render() {
     return (
-      <div className="Chatbox">
-      <Chat chats={this.state.chats}/>
+      <div
+      className="Chatbox">
+      <Chat chats={this.state.chats}
+      ref={this.myScrollRef} />
         <Input className="Input MsgInput"
         changeHandler={(e) => this.changeHandler(e)}
         onKeyPress={this.handleKeyPress}

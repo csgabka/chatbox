@@ -15,6 +15,7 @@ li.SingleMessage {
 }
 
 .Message {
+  position: relative;
   margin-left: 15px;
   border-radius: 10px;
   color: #FFF;
@@ -23,7 +24,7 @@ li.SingleMessage {
   max-width: 80%;
 }
 
-/* .Message:before {
+.Message:before {
   z-index: 999;
 	content: ' ';
 	position: absolute;
@@ -49,4 +50,4 @@ li.SingleMessage {
 	bottom: auto;
 	border: 3px solid;
 	border-color: #FFF #FFF transparent transparent;
-} */
+}
