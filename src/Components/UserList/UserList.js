@@ -27,15 +27,14 @@ class  UserList extends Component {
 }
 
   render() {
-    console.log(this.state.users);
       return (
       <div className="UserList">
         <h1 className="UserListTitle">Online</h1>
         <ul>
         {this.state.users.map((user, index) => {
           return (
-            <div>
-            <li className="OnlineUsers" key={index}>{user.username}</li>
+            <div key={index}>
+            <li className="OnlineUsers">{user.username}</li>
             <ColoredLine color="#B2B8B8" />
             </div>
           );

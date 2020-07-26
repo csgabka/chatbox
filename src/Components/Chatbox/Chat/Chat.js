@@ -7,8 +7,8 @@ const chat = React.forwardRef((props, ref) => {
   let chats = props.chats;
   let username = localStorage.getItem('localStoredName');
   return (
-    <div className="ChatContainer" >
-      <ul className="Chats" ref={ref}>
+    <div className="ChatContainer">
+      <ul className="Chats" >
       {chats.map((chat, index) => {
         const postDate = new Date(chat.timestamp);
         return (
@@ -18,7 +18,10 @@ const chat = React.forwardRef((props, ref) => {
           message={chat.message}/>
         );
       })}
+      <div ref={ref}>
+     </div>
       </ul>
+
     </div>
   );
 })

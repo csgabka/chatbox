@@ -17,7 +17,7 @@ class Chatbox extends Component {
   }
 
   componentDidMount() {
-    this.myScrollRef.current.scrollTo(0,1600);
+    this.myScrollRef.current.scrollIntoView();
     const chatRef = firebase.database().ref('chat');
     chatRef.on('value', snapshot => {
       const getChats = snapshot.val();
@@ -34,7 +34,7 @@ class Chatbox extends Component {
 }
 
 componentDidUpdate() {
-this.myScrollRef.current.scrollTo(0,1600);
+this.myScrollRef.current.scrollIntoView();
 }
 
   changeHandler = (e) => {
