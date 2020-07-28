@@ -3,7 +3,9 @@ import Button from '../Button/Button';
 import Input from '../Input/Input';
 import Backdrop from '../Backdrop/Backdrop';
 import './Auth.css';
+import Modal from '../../Components/Modal/Modal';
 import firebase from '../../firebase.js';
+
 
 
 class Auth extends Component {
@@ -83,8 +85,9 @@ class Auth extends Component {
     let noNameEntered = <p className="error">Please enter your name!</p>;
       return(
           <div className="Auth">
-            <h1 style={style}>Chatbox</h1>
-            <Backdrop>
+          <Modal />
+          <h1 style={style}>Chatbox</h1>
+            <Backdrop className="Backdrop">
               <h1>Login</h1>
               <Input
               className="Input"

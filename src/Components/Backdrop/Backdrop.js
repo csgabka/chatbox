@@ -3,7 +3,7 @@ import './Backdrop.css';
 
 const backdrop = (props) => {
   return (
-  <div className="Backdrop">
+  <div className={props.className}>
     {props.children}
   </div>
 );
