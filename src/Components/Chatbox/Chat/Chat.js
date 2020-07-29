@@ -10,9 +10,11 @@ const chat = React.forwardRef((props, ref) => {
     <div className="ChatContainer">
       <ul className="Chats" >
       {chats.map((chat, index) => {
+        let sender = (username === chat.username) ? 'me' : username;
         const postDate = new Date(chat.timestamp);
         return (
           <SingleMessage
+          sender={sender}
           postDate={postDate}
           name={chat.username}
           message={chat.message}/>

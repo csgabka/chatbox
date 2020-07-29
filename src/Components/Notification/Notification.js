@@ -5,11 +5,13 @@ import './Notification.css';
 const notification = (props) => {
   return (
   <div className={props.className}>
-    <p className="error">You've been logged out
+    <p className="logout error">You've been logged out
     due to inactivity! <br />Please login again!
     </p>
-    <Button className="Button"
-    name="OK!"/>
+    <Button
+    className="Button"
+    name="OK!"
+    handleSubmit={props.reset}/>
   </div>
 );
 }

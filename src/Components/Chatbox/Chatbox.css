@@ -24,3 +24,13 @@
   height: 40px;
   font-size: 16px;
 }
+
+@media screen and (max-width: 700px) {
+  .MsgInput {
+    left: 0;
+    width: 70%;
+  }
+  .Send {
+    width: 30%;
+  }
+}

@@ -1,8 +1,9 @@
-li.SingleMessage {
+li {
   box-sizing: border-box;
   padding: 5px;
   word-wrap: break-word;
   display: flex;
+  justify-content: flex-end;
 }
 
 .Time {

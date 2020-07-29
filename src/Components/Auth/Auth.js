@@ -15,7 +15,8 @@ class Auth extends Component {
       username: '',
       userKey: '',
       isValid: false,
-      alreadyLoggedIn: false
+      alreadyLoggedIn: false,
+      timedOutSession: true
     }
     this.changeHandler = this.changeHandler.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -76,16 +77,19 @@ class Auth extends Component {
       this.setState({username: '', alreadyLoggedIn: false});
     }
 
+    resetSession = (e) => {
+      this.setState({timedOutSession: false})
+    }
+
   render() {
     let style = {
       fontSize: 30
     }
-
+    let modal = <Modal reset={(e) => this.resetSession(e)} timedOutSession={this.state.timedOutSession}/>;
     let alreadyLoggedIn = <p className="error">{this.state.username} has already logged in!</p>;
-    let noNameEntered = <p className="error">Please enter your name!</p>;
       return(
           <div className="Auth">
-          <Modal />
+          {(this.state.timedOutSession) ? modal : null}
           <h1 style={style}>Chatbox</h1>
             <Backdrop className="Backdrop">
               <h1>Login</h1>

@@ -5,7 +5,8 @@ import './Modal.css';
 const modal = (props) => {
   return (
     <div className="Modal">
-      <Notification />
+      <Notification reset={props.reset}
+      timedOutSession={props.timedOutSession}/>
     </div>
 );
 }
