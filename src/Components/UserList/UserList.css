@@ -24,9 +24,10 @@
 }
 
 .OnlineUsers::before {
+  position: relative;
   content: "•";
+  bottom: 5px;;
   font-size: 25px;
-  padding: 5px;
   color: #05a305;
 }
 

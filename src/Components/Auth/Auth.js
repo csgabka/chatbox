@@ -16,12 +16,15 @@ class Auth extends Component {
       userKey: '',
       isValid: false,
       alreadyLoggedIn: false,
-      timedOutSession: true
+      timedOutSession: false
     }
+
     this.changeHandler = this.changeHandler.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.authorization = this.authorization.bind(this);
     this.onFocusHandler = this.onFocusHandler.bind(this);
+
+
   }
 
   componentDidMount() {
@@ -31,6 +34,7 @@ class Auth extends Component {
   componentWillUnmount() {
     this._isMounted = false;
   }
+
 
 
   changeHandler = (e) => {

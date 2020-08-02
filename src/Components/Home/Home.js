@@ -7,13 +7,39 @@ import './Home.css';
 
 
 class Home extends Component {
+  constructor() {
+    super();
+    this.events = [
+     "load",
+     "mousemove",
+     "mousedown",
+     "click",
+     "scroll",
+     "keypress"
+   ];
+   for (var i in this.events) {
+         window.addEventListener(this.events[i], this.resetTimeout);
+     }
+  }
+
+setTimeout = () => {
+    this.logoutTimeout = setTimeout(this.logoutUser, 1000 * 300);
+}
+
+  resetTimeout = (e) => {
+    clearTimeout(this.logoutTimeout);
+    this.setTimeout();
+  }
+
   logoutUser = (e) => {
     let username = localStorage.getItem('localStoredName');
     let userKey = localStorage.getItem('localStoredUserKey');
     let userRef = firebase.database().ref('users');
     userRef.child(userKey).remove();
     localStorage.clear();
-    window.location.replace('/');
+    window.location.replace({pathname: '/'
+
+  });
   }
 
   render() {

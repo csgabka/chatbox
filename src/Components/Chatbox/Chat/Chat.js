@@ -14,6 +14,7 @@ const chat = React.forwardRef((props, ref) => {
         const postDate = new Date(chat.timestamp);
         return (
           <SingleMessage
+          key={postDate}
           sender={sender}
           postDate={postDate}
           name={chat.username}
