@@ -1,6 +1,6 @@
 //TO DO!
-/responsive
-//me and other chat render on different side
+
+
 //error msg for '' login and '' msg
 //auto logout after certain time
 //DESIGN
