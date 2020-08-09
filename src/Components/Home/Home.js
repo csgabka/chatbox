@@ -7,8 +7,8 @@ import './Home.css';
 
 
 class Home extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.events = [
      "load",
      "mousemove",
@@ -22,13 +22,17 @@ class Home extends Component {
      }
   }
 
-setTimeout = () => {
-    this.logoutTimeout = setTimeout(this.logoutUser, 1000 * 300);
+  timeOut = () => {
+      this.logoutTimeout = setTimeout(() => {
+      this.props.timeoutLogoutUser();
+      setTimeout(this.logoutUser, 1000);
+      }, 100);
 }
+
 
   resetTimeout = (e) => {
     clearTimeout(this.logoutTimeout);
-    this.setTimeout();
+    this.timeOut();
   }
 
   logoutUser = (e) => {
@@ -38,7 +42,6 @@ setTimeout = () => {
     userRef.child(userKey).remove();
     localStorage.clear();
     window.location.replace({pathname: '/'
-
   });
   }
 

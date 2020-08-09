@@ -6,8 +6,6 @@ import './Auth.css';
 import Modal from '../../Components/Modal/Modal';
 import firebase from '../../firebase.js';
 
-
-
 class Auth extends Component {
   constructor(){
     super();
@@ -15,8 +13,7 @@ class Auth extends Component {
       username: '',
       userKey: '',
       isValid: false,
-      alreadyLoggedIn: false,
-      timedOutSession: false
+      alreadyLoggedIn: false
     }
 
     this.changeHandler = this.changeHandler.bind(this);
@@ -81,19 +78,17 @@ class Auth extends Component {
       this.setState({username: '', alreadyLoggedIn: false});
     }
 
-    resetSession = (e) => {
-      this.setState({timedOutSession: false})
-    }
+  
 
   render() {
     let style = {
       fontSize: 30
     }
-    let modal = <Modal reset={(e) => this.resetSession(e)} timedOutSession={this.state.timedOutSession}/>;
+    let modal = <Modal reset={(e) => this.props.resetSession(e)} timedOutSession={this.props.timedOutSession}/>;
     let alreadyLoggedIn = <p className="error">{this.state.username} has already logged in!</p>;
       return(
           <div className="Auth">
-          {(this.state.timedOutSession) ? modal : null}
+          {(this.props.timedOutSession) ? modal : null}
           <h1 style={style}>Chatbox</h1>
             <Backdrop className="Backdrop">
               <h1>Login</h1>
