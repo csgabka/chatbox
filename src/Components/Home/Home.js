@@ -5,35 +5,32 @@ import Button from '../Button/Button';
 import firebase from '../../firebase.js';
 import './Home.css';
 
-
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.events = [
-     "load",
-     "mousemove",
-     "mousedown",
-     "click",
-     "scroll",
-     "keypress"
-   ];
-   for (var i in this.events) {
-         window.addEventListener(this.events[i], this.resetTimeout);
-     }
+
+     this.events = [
+      "load",
+      "mousemove",
+      "mousedown",
+      "click",
+      "scroll",
+      "keypress"
+    ];
+    for (var i in this.events) {
+          window.addEventListener(this.events[i], this.resetToken);
+      }
   }
 
-  timeOut = () => {
-      this.logoutTimeout = setTimeout(() => {
-      this.props.timeoutLogoutUser();
-      setTimeout(this.logoutUser, 1000);
-      }, 100);
-}
-
-
-  resetTimeout = (e) => {
-    clearTimeout(this.logoutTimeout);
-    this.timeOut();
-  }
+//   timeOut = () => {
+//       this.logoutTimeout = setTimeout(this.logoutUser, 5000);
+// }
+//
+//
+//   resetTimeout = (e) => {
+//     clearTimeout(this.logoutTimeout);
+//     this.timeOut();
+//   }
 
   logoutUser = (e) => {
     let username = localStorage.getItem('localStoredName');
@@ -41,8 +38,9 @@ class Home extends Component {
     let userRef = firebase.database().ref('users');
     userRef.child(userKey).remove();
     localStorage.clear();
-    window.location.replace({pathname: '/'
-  });
+    this.props.history.replace({
+      pathname: "/",
+      state: {timedOutSession: true}});
   }
 
   render() {

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { HashRouter, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import Auth from './Components/Auth/Auth';
 import Home from './Components/Home/Home';
 import Error from './Components/Error/Error';
@@ -9,7 +9,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      timedOutSession: true
+      timedOutSession: false
     }
   }
 
@@ -23,10 +23,11 @@ class App extends Component {
 
   render() {
     return (
-      <HashRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div className="App">
         <Switch>
-          <Route path="/" exact render={(props) =>
+          <Route 
+          path="/" exact render={(props) =>
             <Auth {...props} resetSession={(e) => this.resetSession(e)} timedOutSession={this.state.timedOutSession} />} />
           <Route path="/chat" exact render={(props) =>
             <Home {...props}
@@ -35,7 +36,7 @@ class App extends Component {
           <Route component={Error} />
         </Switch>
         </div>
-      </HashRouter>
+      </BrowserRouter>
 
 
       );

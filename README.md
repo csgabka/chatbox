@@ -1,6 +1,4 @@
 //TO DO!
-
-
 //error msg for '' login and '' msg
 //auto logout after certain time
 //DESIGN
